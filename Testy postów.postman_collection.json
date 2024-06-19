@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "cc5be516-ec7a-46f6-9aeb-be4f577ebb11",
+		"name": "Testy postów",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21648690"
+	},
+	"item": [
+		{
+			"name": "Pobranie wszystkich postów",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Pobranie wybranego posta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/posts/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrowanie wszystkich postów",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/posts?author=Tom Laong",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Hello World",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "Tom Laong"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dodawanie posta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n\n      \"title\": \"Hey World\",\n      \"author\": \"John Doel\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Nadpisywanie posta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"Hello World2\",\n\"author\": \"John Doe2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/posts/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Nadpisywanie czesci posta",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"Hello World2\",\n\"author\": \"John Doe2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/posts/2"
+			},
+			"response": []
+		}
+	]
+}
