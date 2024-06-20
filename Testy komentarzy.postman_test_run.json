@@ -1,0 +1,239 @@
+{
+	"id": "fdb1123a-bc16-43a7-ae7b-46137183c032",
+	"name": "Testy komentarzy",
+	"timestamp": "2024-06-20T12:44:51.776Z",
+	"collection_id": "21648690-b770d83f-4ca9-4fea-9058-e02369ac54e0",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 6,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-06-20T12:44:51.351Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "9fa9add0-63d8-4d68-86cc-ba62e6ba5496",
+			"name": "All comments",
+			"url": "http://localhost:3000/comments",
+			"time": 44,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				44
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "5ada35c7-a35c-47bd-95cc-0858b751517f",
+			"name": "One comment",
+			"url": "http://localhost:3000/comments/1",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "37bcd28e-754a-4fd7-84b0-059899317533",
+			"name": "Filtering comments",
+			"url": "http://localhost:3000/comments?text=another comment about post 1",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "ad7b9bef-54ad-4804-bb1f-87d50be5b688",
+			"name": "Add new comment",
+			"url": "http://localhost:3000/comments",
+			"time": 13,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "7e96d0b5-b359-468d-b311-c297349c46a4",
+			"name": "Change comment",
+			"url": "http://localhost:3000/comments/1",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "6516f605-b69c-45f4-b826-229e826e4f3e",
+			"name": "Change part comment",
+			"url": "http://localhost:3000/comments/2",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "a7c6e23a-5e5b-41a8-99a2-99efc05f7fbe",
+			"name": "Delete comment",
+			"url": "http://localhost:3000/comments/P7TBFEp",
+			"time": 12,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Successful POST request": false
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"Successful POST request": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 98,
+	"collection": {
+		"requests": [
+			{
+				"id": "9fa9add0-63d8-4d68-86cc-ba62e6ba5496",
+				"method": "GET"
+			},
+			{
+				"id": "5ada35c7-a35c-47bd-95cc-0858b751517f",
+				"method": "GET"
+			},
+			{
+				"id": "37bcd28e-754a-4fd7-84b0-059899317533",
+				"method": "GET"
+			},
+			{
+				"id": "ad7b9bef-54ad-4804-bb1f-87d50be5b688",
+				"method": "POST"
+			},
+			{
+				"id": "7e96d0b5-b359-468d-b311-c297349c46a4",
+				"method": "PUT"
+			},
+			{
+				"id": "6516f605-b69c-45f4-b826-229e826e4f3e",
+				"method": "PATCH"
+			},
+			{
+				"id": "a7c6e23a-5e5b-41a8-99a2-99efc05f7fbe",
+				"method": "DELETE"
+			}
+		]
+	}
+}
