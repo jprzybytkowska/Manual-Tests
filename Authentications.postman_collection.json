@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "40ec3aaa-b506-4665-870a-e99c806e4556",
+		"name": "Authentications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21648690"
+	},
+	"item": [
+		{
+			"name": "basic auth",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "digest auth",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "hawk auth",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
