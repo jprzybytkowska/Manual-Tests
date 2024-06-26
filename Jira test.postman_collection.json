@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "0ed412da-d437-40b9-8cc4-175549e9ceef",
+		"name": "Jira test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21648690"
+	},
+	"item": [
+		{
+			"name": "create filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"filterName\", \"newFilter\" + pm.variables.replaceIn('{{$timestamp}}'));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"check description\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.description).to.eql('Lists all open bugs by postman');",
+							"});",
+							"pm.test(\"check name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.contain('newFilter');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{filterName}}\",\n    \"description\": \"Lists all open bugs by postman\",\n    \"jql\": \"project = PT AND type = Bug\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter"
+			},
+			"response": []
+		},
+		{
+			"name": "create filter with the same name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"check error message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.errors['filterName']).to.eql('Filtr o takiej samej nazwie już istnieje.');",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"All open bugs\",\n    \"description\": \"Lists all open bugs by postman\",\n    \"jql\": \"project = PT AND type = Bug\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter"
+			},
+			"response": []
+		},
+		{
+			"name": "get filter if exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"filterName\", \"newFilter\" + pm.variables.replaceIn('{{$timestamp}}'));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"check description\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.description).to.eql('Lists all open bugs by postman');",
+							"});",
+							"pm.test(\"check name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.contain('newFilter');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{filterName}}\",\n    \"description\": \"Lists all open bugs by postman\",\n    \"jql\": \"project = PT AND type = Bug\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter/10010"
+			},
+			"response": []
+		},
+		{
+			"name": "get filter if no exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"filterName\", \"newFilter\" + pm.variables.replaceIn('{{$timestamp}}'));",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"check error message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.errorMessages).to.contain('Wybrany filtr nie jest dostępny; prawdopodobnie został usunięty lub jego uprawnienia uległy zmianie.');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{filterName}}\",\n    \"description\": \"Lists all open bugs by postman\",\n    \"jql\": \"project = PT AND type = Bug\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter/234567"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"filterNameAfterUpdate\", \"UpdatedFilter\" + pm.variables.replaceIn('{{$timestamp}}'));",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"check description\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.description).to.eql('Lists all open bugs by postman');",
+							"});",
+							"pm.test(\"check name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.contain('UpdatedFilter');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{filterNameAfterUpdate}}\",\n    \"description\": \"Lists all open bugs by postman\",\n    \"jql\": \"project = PT AND type = Bug\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter/10010"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete filter if iD no exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"check error message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.errorMessages).to.contain('Filtr obecnie nie istnieje.');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter/10"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete filter if iD exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"check error message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.errorMessages).to.contain('Filtr obecnie nie istnieje.');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "ATATT3xFfGF0zfqbI7CQ8OvFByUntP8yEU_SNA9ebwR3H49rSwo4n2OZJlgJoGr6cP55h4DtCP6fbN2lsV-KbQ7pQkh2ENzgm4Nc9hLP557Nwk-k6irSLYMHWoqpFqt-G7UE-N1AibQyryAEHlrfH0kI2FnQSmkSqf41-P6MjA1qzl5QFWvhcI0=AB81D728",
+						"username": "jprzybytkowska1@gmail.com"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://justyna-przybytkowska.atlassian.net/rest/api/2/filter/10011"
+			},
+			"response": []
+		}
+	]
+}
