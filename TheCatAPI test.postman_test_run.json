@@ -15,7 +15,7 @@
 		{
 			"id": "bb0e542e-bcde-4479-b6e9-f7f2100af290",
 			"name": "Get 10 bengal images",
-			"url": "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+			"url": "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_KNxxxxxxx5QH1RDLcmMFY8345nxNA7YTWkbvFL",
 			"time": 1492,
 			"responseCode": {
 				"code": 200,
@@ -48,7 +48,7 @@
 		{
 			"id": "eab1f4c6-55c2-47c3-b85d-8d47570f1b5c",
 			"name": "Get 1 bengal image",
-			"url": "https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=beng&api_key=live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+			"url": "https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=beng&api_key=live_KNOpEY8nxxxxMFY8345nxNA7YTWkbvFL",
 			"time": 463,
 			"responseCode": {
 				"code": 200,
