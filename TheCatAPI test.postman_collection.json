@@ -42,7 +42,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+					"raw": "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_KNxxxxxxxxxx2Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -65,7 +65,7 @@
 						},
 						{
 							"key": "api_key",
-							"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL"
+							"value": "live_KNOpEY8nOEgP4N0vu8ryxxxxxxxxxDLcmMFY8345nxNA7YTWkbvFL"
 						}
 					]
 				}
@@ -108,7 +108,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=beng&api_key=live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+					"raw": "https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=beng&api_key=live_KNOpEY8xxxxxxxxxxxxQH1RDLcmMFY8345nxNA7YTWkbvFL",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -131,7 +131,7 @@
 						},
 						{
 							"key": "api_key",
-							"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL"
+							"value": "live_KNOpEY8nOEgP4N0vu8rxxxxxxQH1RDLcmMFY8345nxNA7YTWkbvFL"
 						}
 					]
 				}
@@ -189,7 +189,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+						"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCxxxxxxxMFY8345nxNA7YTWkbvFL",
 						"type": "text"
 					},
 					{
@@ -234,7 +234,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+						"value": "live_KNOpEY8nOEgP4N0vu8xxxxxxxxxx5QH1RDLcmMFY8345nxNA7YTWkbvFL",
 						"type": "text"
 					},
 					{
@@ -290,7 +290,7 @@
 					},
 					{
 						"key": "x-api-key",
-						"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+						"value": "live_KNOpEY8nOEgP4N0vu8ryngpxxxxxxxxxxLcmMFY8345nxNA7YTWkbvFL",
 						"type": "text"
 					}
 				],
@@ -330,7 +330,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "live_KNOpEY8nOEgP4N0vu8ryngp12Y30asCER9C5QH1RDLcmMFY8345nxNA7YTWkbvFL",
+						"value": "live_KNOpEY8nOEgP4N0vu8ryxxxxxxxxx1RDLcmMFY8345nxNA7YTWkbvFL",
 						"type": "text"
 					},
 					{
